@@ -8,7 +8,7 @@ This program was written in ARM7, a somewhat deprecated RISC instruction set. Th
 Game Logic
 ----------
 
-The game follows the same basic ruleset as the original Space Invaders. You're given four lives. There was 7x5 (35) aliens on a level. Successive rows of aliens are worth more points. Motherships pass by at random, and provide random point values in the range [100, 300]. Losing all lives ends the game. The game can be played again any time by pressing enter. The game can also be quit by pressing q. The game is entirely interrupt driven.  
+The game follows the same basic ruleset as the original Space Invaders. You're given four lives. There are 7x5 (35) aliens on a level. Successive rows of aliens are worth more points. Motherships pass by at random, and provide random point values in the range [100, 300] mod 100 == 0. Losing all lives ends the game. The game can be played again any time by pressing enter. The game can also be quit by pressing q. The game is entirely interrupt driven.  
 
 See it in action:
 
