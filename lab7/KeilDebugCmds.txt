@@ -1,0 +1,15 @@
+If running this program in Keil uVision, you must first set up a virtual serial port to emulate a serial pair between two COM ports on your local machine. 
+After your virtual pair is established, enter debug mode in Keil uVision and enter the following commands into the Debug Command Window:
+
+mode com1 115200, 0, 8, 1
+assign com1<s0in>s0out
+s0time=0
+
+Depending on your virtual port setup, you may need to change COM1 to some other port. The first command sets your port's baud rate, parity bits, data bits and stop bit(s), in that order.
+The second command assigns your port to do I/O.
+The third command decouples your real hardware baud rate from the virtual baudrate. s0time=1 would cause the debugger simulation to time it's I/O exactly like whatever hardware you're simulating, but this will slow your simulation greatly.
+
+Finally, open up PuTTy or some other serial connection tool, and connect to whichever COM port you DID NOT use in the above commands. Make sure that the baud is set to whatever you set it to above.
+
+Now you're ready to play space invaders. Make use of the virtualized hardware in debug mode to start the game initially, as it requires a physical button press on the hardware it was written for.
+
